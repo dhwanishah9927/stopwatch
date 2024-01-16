@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StopWatch</title>
+    <!-- import style.css file -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- main container -->
+    <div id="container">
+      <!-- Time container -->
+      <!-- hour, minute, second, milisecond -->
+      <div id="timecontainer">
+        <span class="zerodigit" id="hour">00</span>
+        <!-- colon will be displaying on small devices only  -->
+        <span class="colonsymbol">:</span>
+        <span class="textvalue">Hr</span>
+
+        <span class="zerodigit" id="minute">00</span>
+        <!-- colon will be displaying on small devices only  -->
+        <span class="colonsymbol">:</span>
+        <span class="textvalue">Min</span>
+
+        <span class="zerodigit" id="second">00</span>
+        <!-- colon will be displaying on small devices only -->
+        <span class="colonsymbol">:</span>
+        <span class="textvalue">Sec</span>
+
+        <span class="zerodigit" id="milisecond">00</span>
+        <span class="textvalue">Msec</span>
+      </div>
+
+      <!-- buttons container -->
+      <div id="buttons-container">
+        <!-- Start button -->
+        <button id="start" class="buttons" onclick="start()">START</button>
+         <!-- Stop btn -->
+         <button id="stop" class="buttons" onclick="stop()">STOP</button>
+        <!-- Reset button -->
+        <button id="reset" class="buttons" onclick="reset()">RESET</button>
+      </div>
+    </div>
+
+    <!-- import javaScript file -->
+    <script src="index.js"></script>
+  </body>
+</html>
