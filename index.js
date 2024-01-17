@@ -9,6 +9,10 @@ function start() {
     isTimerRunning = true;
     runStopwatch();
 }
+// once we click on stop button, timer's boolean value gets false and timer will stop running.
+function stop() {
+    isTimerRunning = false;
+}
 // Once we click on reset button, timer will set defualt value to false and it will reset everything
 function reset() {
     isTimerRunning = false;
@@ -23,13 +27,14 @@ function reset() {
     document.getElementById("milisecond").innerHTML = "00";
 }
 
-function stop() {
-    isTimerRunning = false;
-}
 
+// The runStopwatch() function is a crucial part of the stopwatch project. 
+// It is responsible for updating the time values (hours, minutes, seconds, and milliseconds) and displaying them on the HTML page in a formatted manner. 
 function runStopwatch() 
 {
-    // if timer gets true then increase mili seconds by 1
+    // The function begins with a conditional check to see if the stopwatch is currently running (if (isTimerRunning)). 
+    // If the timer is running, the function proceeds to update the time values; otherwise, it stops further execution.
+    // If the timer is running, the milliseconds are incremented by 1.
     if (isTimerRunning) 
     {
         milliseconds += 1;
@@ -52,7 +57,9 @@ function runStopwatch()
             minutes = 0;
             seconds = 0;
         }
-
+        
+        // Formatting the time values:
+        // The code then converts the numerical time values into strings
         let hoursString = hours;
         let minutesString = minutes;
         let secondsString = seconds;
@@ -85,12 +92,15 @@ function runStopwatch()
         {
             millisecondsString = "0" + millisecondsString;
         }
-
+        // Updating the HTML display
         document.getElementById("hour").innerHTML = hoursString;
         document.getElementById("minute").innerHTML = minutesString;
         document.getElementById("second").innerHTML = secondsString;
         document.getElementById("milisecond").innerHTML = millisecondsString;
-
+        
+        // Setting up the next execution
+        //  Finally, a setTimeout function is used to schedule the next execution of runStopwatch() after a delay of 10 milliseconds. 
+        // This creates a loop, ensuring that the function keeps running and updating the stopwatch display at regular intervals.
         setTimeout(runStopwatch, 10);
     }
 }
